@@ -114,3 +114,38 @@ This restored communication with the Active Directory DNS environment.
 ## Key Takeaways
 
 This project provided hands-on experience deploying and administering a Windows domain environment, managing Active Directory objects, applying Group Policy, configuring client DNS, verifying domain authentication, and troubleshooting DNS-related domain connectivity issues.
+## Lab Screenshots
+
+### Active Directory Structure
+Created and organized Active Directory objects including organizational units, users, and the CLIENT01 domain workstation.
+
+![Active Directory Structure](AD%20File%20names%20and%20Organization.png)
+
+### Active Directory Virtual Machines
+Deployed Windows Server 2025 as the domain controller and Windows 11 as the client workstation in Microsoft Azure.
+
+![Azure AD Lab](AD%20VM.png)
+
+### Domain Authentication Verification
+Verified that John Smith successfully authenticated to the LAB domain from CLIENT01 using `whoami`, `hostname`, and `%logonserver%`.
+
+![Domain Authentication](whoami%20JSmith%20commands.png)
+
+### Security Group Membership
+Added John Smith to the IT-Staff security group and verified his domain group membership from CLIENT01.
+
+![IT Staff Group](Group%20Name%20look%20up%20on%20Jsmith%20Client.png)
+
+### Group Policy
+Created and linked a workstation Group Policy Object and verified that CLIENT01 received the policy.
+
+![Group Policy Verification](Group%20Policy%20Command%20Line.png)
+
+### DNS Troubleshooting
+Intentionally changed CLIENT01's DNS server to `8.8.8.8`, reproduced a failure to resolve the internal `lab.local` domain, then restored DNS to DC01 (`172.16.0.4`) and confirmed successful name resolution.
+
+![DNS Troubleshooting](DNS%20Troubleshoot.png)
+
+## What I Learned
+
+This lab provided hands-on experience with deploying and administering a Windows Active Directory environment. I practiced domain administration, user and group management, Group Policy, domain authentication, DNS configuration, and troubleshooting connectivity between a domain controller and client workstation.
